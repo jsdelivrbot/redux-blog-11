@@ -25,6 +25,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "dotenv-webpack": "^1.5.4",
     "jquery": "^3.3.1",
     "lodash": "^4.17.4",
@@ -32,6 +33,7 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3"
   }
 }
