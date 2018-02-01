@@ -10,6 +10,7 @@ class PostsNew extends Component {
                     className="form-control"
                     type="text"
                     {...field.input} />
+                {field.meta.error}
             </div>
         );
     }
@@ -23,8 +24,8 @@ class PostsNew extends Component {
                     component={ this.renderField } />
 
                 <Field
-                    label="Tags"
-                    name="tags"
+                    label="Categories"
+                    name="categories"
                     component={ this.renderField } />
 
                 <Field
@@ -36,6 +37,25 @@ class PostsNew extends Component {
     }
 }
 
+function validate(values) {
+    const errors = {};
+
+    if (!values.title) {
+        errors.title = 'Enter a title';
+    }
+
+    if (!values.categories) {
+        errors.title = 'Enter some categories';
+    }
+
+    if (!values.content) {
+        errors.title = 'Enter some content';
+    }
+
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'PostsNewForm'
 })(PostsNew);
